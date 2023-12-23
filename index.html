@@ -70,7 +70,7 @@
               <p>Место для ваших воспоминаний о начале обучения.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,8 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -138,7 +139,7 @@
               <p>Место для ваших воспоминаний о начале первого спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +175,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -203,7 +204,7 @@
               <p>Место для ваших воспоминаний об окончании первого спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +240,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -270,7 +271,7 @@
               <p>Место для ваших воспоминаний о начале второго спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +307,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -337,7 +338,7 @@
               <p>Место для ваших воспоминаний об окончании второго спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -373,7 +374,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -402,7 +403,7 @@
               <p>Место для ваших воспоминаний о начале третьего спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -438,7 +439,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -469,7 +470,7 @@
               <p>Место для ваших воспоминаний об окончании третьего спринта.</p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -505,7 +506,7 @@
                   />
                 </svg>
               </button>
-              <button class="card__like-button button_active" type="button">
+              <button type="button" class="card__like-button button_active">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -540,7 +541,7 @@
               </p>
             </div>
             <div class="like_and_button">
-              <button class="card__icon-button">
+              <button type="button" class="card__icon-button">
                 <svg
                   class="like-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -584,12 +585,24 @@
         </li>
       </ul>
       <section class="save">
-        <button type="button" class="button button_save">
+        <button id="saveButton" type="button" class="button button_save">
           <img src="./svg/floppy.svg" alt="дискетка" />
           <span class="button_text">Сохранить на память</span>
         </button>
       </section>
     </main>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div>
+          <svg class="s" viewBox="0 0 24 24">
+            <use href="/svg/favicon.svg#favicon"></use>
+          </svg>
+          <p>Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button class="close">ok</button>
+      </div>
+    </div>
 
     <script src="./scripts/like.js"></script>
   </body>
