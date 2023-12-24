@@ -13,16 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
-.button {
-}
-.button_active {
-}
 
-.img_picture {
-}
-
-.brightness {
-}
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
@@ -33,11 +24,11 @@
   background-size: cover;
   background-attachment: fixed;
   font-family: var(--page-font-family, "Inter", Arial, sans-serif);
-  font-weight: var(--page-font-weight, 400);
+  font-variation-settings: 'wght' var(--page-font-weight, 400);
 }
 
 .block_html {
-  color: var(--black-color, #000000);
+  color: var(--text_color, #000000);
   font-family: var(
     --machine-font-family,
     "Press Start 2P",
@@ -123,7 +114,7 @@
   content: "";
   display: block;
   opacity: 0.6;
-  background: var(--black-color, #000000);
+  background: var(--text_color, #000000);
   height: 2px;
   transform-origin: left;
   inline-size: 100%;
@@ -163,7 +154,7 @@
 }
 
 .header_block {
-  border-bottom: 2px solid var(--text-color, #000000);
+  border-bottom: 2px solid var(--border-bottom, #000000);
   padding: 3px 0px 3px 7px;
 }
 
@@ -195,7 +186,7 @@
 .lable {
   position: absolute;
   z-index: 1;
-  color: var(--text-color, #000000);
+  color: var(--text_color, #000000);
   font-family: var(
     --machine-font-family,
     "Press Start 2P",
@@ -212,11 +203,12 @@
   text-shadow: 0 0 1px var(--pages-background-color, #ffffff);
   inset-inline-end: 13px;
   inset-block-start: 24px;
+  
 }
 
 .paragraph_block {
   display: grid;
-  border-top: 2px solid var(--text-color, #000000);
+  border-top: 2px solid var(--border-top, #000000);
   gap: 27px;
   padding: 25px 30px 0 25px;
   line-height: 116.667%;
@@ -240,6 +232,16 @@
   border: 2px solid transparent;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text_color, #000000);
+}
+
+
+
 .like-icon {
   cursor: pointer;
   max-block-size: 38px;
@@ -247,20 +249,69 @@
 
 .button_active {
   position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
-  background-color: transparent;
-  border: 2px solid var(--text-color, #000000);
+  background-color: var(--pages-background-color, #ffffff);
+  background: var();
+  border: 2px solid var(--text_color, #000000);
   cursor: pointer;
+} 
+
+
+
+
+.button_active:focus {
+  outline: none;
 }
+
+
+
+.button_active:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text_color, #000000);
+}
+
+.button {
+
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+
+.button_active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--text_color, #000000);
+  transition: transform 0.5s ease-in-out;
+  inline-size: 100%;
+  block-size: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  
+}
+
+.button_active:hover::before {
+  transform: scaleX(1);
+}
+
+
+
+
 
 .card__like-button {
   width: 130px;
   padding: 9px 17px;
-  color: var(--text-color, #000000);
+  color: var(--text_color, #000000); 
   font-family: var(
     --machine-font-family,
     "Press Start 2P",
@@ -272,6 +323,8 @@
   font-weight: 400;
   line-height: 90%; /* 12.6px */
 }
+
+
 
 .brightness {
   filter: brightness(100%) hue-rotate(54deg);
@@ -290,7 +343,7 @@
 }
 
 .invert {
-  filter: invert(100%) hue-rotate(31deg);
+  filter: invert(70%) hue-rotate(31deg);
 }
 
 .blur {
@@ -320,8 +373,18 @@
   cursor: pointer;
 }
 
+.button:focus {
+  outline: none;
+}
+
+
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text_color, #000000);
+}
+
 .button_text {
-  color: var(--text-color, #000000);
+  color: var(--text_color, #000000);
   font-family: var(
     --machine-font-family,
     "Press Start 2P",
@@ -331,8 +394,21 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 90%; /* 12.6px */
+  line-height: 90%; 
 }
+
+
+
+.floppy_disk_21 {
+  fill: var(--text_color, #000000);
+}
+
+.floppy_disk_39 {
+  fill: var(--text_color, #000000);
+} 
+
+
+
 
 .modal {
   display: grid;
@@ -345,30 +421,132 @@
   height: 100vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.75);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s, visibility .4s;
 }
 
-.modal-content {
-  background-color: #fefefe;
+.modal__box {
+  position: relative;
+  background-color: var(--pages-background-color, #ffffff);
   margin: 15% auto;
   padding: 20px;
-  border: 2px solid var(--text-color, #000000);
+  border: 2px solid var(--text_color, #000000);
   max-width: 357px;
+  transform: scale(0);
+  transition: transform .8s;
 }
 
-.close {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
+.block_with_text_and_button {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal.open .modal__box{
+  transform: scale(1);
+
+}
+
+.modal_close {
+  width: 293px;
+  padding: 9px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
+  border: 2px solid var(--text_color, #000000);
+  background: var(--pages-background-color, #ffffff);
+
 }
 
-.s {
-  z-index: 99998;
-  fill: red;
+.modal_close:focus {
+  outline: none;
 }
+
+
+
+.modal_close:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--text_color, #000000);
+}
+
+
+
+.floppy_and_text {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 20px 
+}
+
+.text_block {
+  color: var(--text_color, #000000);
+  font-family: var(
+    --machine-font-family,
+    "Press Start 2P",
+    "Roboto Mono",
+    monospace
+  );
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: uppercase;
+  width: 234px
+}
+
+.like-icon {
+  fill: var(--pages-background-color, #ffffff);
+  transition: fill 0.3s ease;
+}
+
+.like-icon:hover {
+  animation: pulse 0.5s infinite alternate;
+}
+
+
+.ok_button {
+  color: var(--text_color, #000000);
+  font-family: var(
+    --machine-font-family,
+    "Press Start 2P",
+    "Roboto Mono",
+    monospace
+  );
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%; /* 12.6px */
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+@supports (
+  (-webkit-text-stroke: 1px var(--page-background-color, #ffffff)) or
+    (text-shadow: 1px var(--page-background-color, #ffffff))
+) {
+  .lable {
+    -webkit-text-stroke: 1px var(--page-background-color, #ffffff);
+    text-shadow: 1px var(--page-background-color, #ffffff); 
+  }
+}
+
+
+
+
+
+
+
+
