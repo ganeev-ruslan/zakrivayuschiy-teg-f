@@ -39,10 +39,31 @@ function setButtonText(heart, button) {
     );
   }
 }
-document.getElementById("saveButton").addEventListener("click", function () {
-  document.getElementById("modal").style.display = "block";
+
+
+document.getElementById('saveButton').addEventListener("click", function() {
+  document.getElementById('my_modal').classList.add("open")
+  
 });
 
-document.querySelector(".close").addEventListener("click", function () {
-  document.getElementById("modal").style.display = "none";
+document.getElementById('close').addEventListener("click", function() {
+  document.getElementById('my_modal').classList.remove("open")
+  
 });
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === 'Escape'){
+    document.getElementById('my_modal').classList.remove('open')
+  }
+})
+
+document.querySelector('#my_modal .modal__box').addEventListener('click', event => {
+  event._isClickWithInModal = true;
+});
+
+document.getElementById('my_modal').addEventListener('click', event => {
+  if (event._isClickWithInModal) return;
+  event.currentTarget.classList.remove('open')
+});
+
+
