@@ -38,13 +38,11 @@
       #00000000 2px 4px
     ),
     repeating-linear-gradient(to bottom, #000000 0 2px, #00000000 2px 4px),
-    linear-gradient(to bottom, #007F0C 0.01%, #004306);
+    linear-gradient(to bottom, #007f0c 0.01%, #004306);
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
-
     --text_color: var(--green-color, #00cc14);
     --border_color: var(--green-color, #00cc14);
     --border-top: var(--green-color, #00cc14);
@@ -54,13 +52,11 @@
     --title-font-weight: 785;
     --button-text-color: var(--green-color, #00cc14);
     --page-background-image: repeating-linear-gradient(
-      to left,
-      #000000 0 2px,
-      #00000000 2px 4px
-    ),
-    repeating-linear-gradient(to bottom, #000000 0 2px, #00000000 2px 4px),
-    linear-gradient(to bottom, #007F0C 0.01%, #004306);
+        to left,
+        #000000 0 2px,
+        #00000000 2px 4px
+      ),
+      repeating-linear-gradient(to bottom, #000000 0 2px, #00000000 2px 4px),
+      linear-gradient(to bottom, #007f0c 0.01%, #004306);
   }
-  
-
 }
