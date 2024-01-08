@@ -200,6 +200,7 @@
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  text-shadow: 0 0 1px var(--pages-background-color, #ffffff);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   inset-inline-end: 24px;
@@ -351,7 +352,7 @@
   gap: 5px;
   align-items: center;
   justify-content: center;
-  padding: 10px 17px;
+  /* padding: 10px 17px; */
   cursor: pointer;
 }
 
@@ -400,7 +401,9 @@
   font-weight: 400;
   line-height: 90%;
 }
-
+.buton_size {
+  padding: 12.5px 130.5px;
+}
 .floppy_disk_21 {
   position: relative;
   z-index: 1;
@@ -527,8 +530,8 @@
   .block_with_text_and_button {
     gap: 28px;
   }
-  .button {
-    padding: 9px 17px;
+  .buton_size {
+    padding: 9.5px 112.5px;
   }
   .button_footer {
     padding: 17px 19px;
@@ -541,6 +544,7 @@
 ) {
   .lable {
     -webkit-text-stroke: 1px var(--pages-background-color, #ffffff);
+    text-stroke: 1px var(--pages-background-color, #ffffff);
     text-shadow: none;
   }
 }
