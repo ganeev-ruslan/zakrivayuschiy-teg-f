@@ -584,7 +584,7 @@
       <section class="save">
         <button  id="saveButton" type="button" class="button button_save button_grid button_footer">
           <svg class="floppy_svg" viewBox="0 0 21 21" width="21" height="21" >
-            <use href="./svg/floppy.svg#disk" class="floppy_disk_21" >
+            <use href="./svg/floppy.svg#disk" class="floppy_disk_21" ></use>
           </svg>
           <span class="button__text">Сохранить на&nbsp;память</span>
         </button>
@@ -596,13 +596,15 @@
         <div class="block_with_text_and_button">
           <div class="floppy_and_text">
             <svg viewBox="0 0 21 21" width="39" height="39" >
-              <use href="./svg/floppy.svg#disk" class="floppy_disk_21">
+              <use href="./svg/floppy.svg#disk" class="floppy_disk_21"></use>
             </svg>
             <p class="text_block">Вставьте дискету, чтобы продолжить</p>
           </div>
-          <button type="button" class="button button_save" id="close">
-            <span class="button__text">OK</span>
-          </button>
+          <form method="dialog">
+            <button type="submit" class="button button_save buton_size" id="close">
+              <span class="button__text">OK</span>
+            </button>
+          </form>
         </div>
       </div>
     </div>
